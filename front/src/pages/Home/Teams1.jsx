@@ -33,7 +33,8 @@ class Teams1 extends React.PureComponent {
               key="block"
               leaveReverse
               {...dataSource.block}
-              component={Row}>
+              component={Row}
+            >
               {listChildren}
             </QueueAnim>
           </OverPack>
