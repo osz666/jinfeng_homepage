@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-
+import { Link, animateScroll as scroll } from "react-scroll";
 const HeadImageWrap = styled.div`
   & img{
     width: 180px;
@@ -25,13 +25,18 @@ export const Nav00DataSource = {
         name: 'item0',
         className: 'header0-item',
         children: {
-          href: '#',
+          // href: '#Content0_0',
           children: [
             {
               children: (
-                <span>
-                  <p>产品与服务</p>
-                </span>
+                <Link 
+                to="Teams0_0"
+                smooth={true} 
+                >
+              <span>
+                <a>产品与服务</a>
+              </span>
+              </Link>
               ),
               name: 'text',
             },
@@ -42,13 +47,18 @@ export const Nav00DataSource = {
         name: 'item1',
         className: 'header0-item',
         children: {
-          href: '#',
+          // href: '#Teams0_0',
           children: [
             {
               children: (
+                <Link 
+                  to="Teams0_0"
+                  smooth={true}
+                  >
                 <span>
-                  <p>&nbsp;客户介绍</p>
+                  <a>客户介绍</a>
                 </span>
+                </Link>
               ),
               name: 'text',
             },
@@ -59,21 +69,48 @@ export const Nav00DataSource = {
         name: 'item2',
         className: 'header0-item',
         children: {
-          href: '#',
+        //  href: '#Teams1_0',
           children: [
             {
               children: (
+                <Link 
+                  to="Teams0_0"
+                  smooth={true}
+                  >
                 <span>
-                  <p>团队介绍</p>
+                  <a>团队介绍</a>
                 </span>
+                </Link>
               ),
               name: 'text',
             },
           ],
         },
       },
-    ],
-  },
+      {
+      name: 'item3',
+      className: 'header0-item',
+      children: {
+       // href: '#',
+        children: [
+          {
+            children: (
+              <Link 
+                  to="Teams0_0"
+                  smooth={true}
+                  >
+                <span>
+                  <a>联系我们</a>
+                </span>
+                </Link>
+          ),
+           name: 'text',
+         },
+        ],
+      },
+    },
+  ],
+},
   mobileMenu: { className: 'header0-mobile-menu' },
 };
 export const Banner01DataSource = {
@@ -112,7 +149,7 @@ export const Content00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://zos.alipayobjects.com/rmsportal/WBnVOjtIlGWbzyQivuyq.png',
+                <img src="partners/工业数字化.jpg" />
             },
             {
               name: 'title',
@@ -154,7 +191,7 @@ export const Content00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png',
+                <img src="partners/技术咨询.jpg" />
             },
             {
               name: 'title',
@@ -192,7 +229,7 @@ export const Content00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png',
+                <img src="partners/前沿技术培训.jpg" />
             },
             {
               name: 'title',
@@ -209,10 +246,10 @@ export const Content00DataSource = {
     ],
   },
 };
-export const Content50DataSource = {
-  wrapper: { className: 'home-page-wrapper content5-wrapper' },
-  page: { className: 'home-page content5 kcb94y2epq-editor_css' },
-  OverPack: { playScale: 0.3, className: '' },
+export const Teams00DataSource = {
+  wrapper: { className: 'home-page-wrapper teams0-wrapper' },
+  OverPack: { playScale: 0.3, className: 'home-page teams0' },
+  page: { className: 'home-page teams0' },
   titleWrapper: {
     className: 'title-wrapper',
     children: [
@@ -228,62 +265,72 @@ export const Content50DataSource = {
       {
         name: 'content',
         className: 'title-content',
-        children: (
-          <span>
-            <p>&nbsp;合作公司</p>
-          </span>
-        ),
+       
       },
     ],
   },
-  block: {
-    className: 'content5-img-wrapper',
-    gutter: 32,
+  BannerAnim: {
+    className: 'banner-anim',
     children: [
       {
-        name: 'block1',
-        className: 'block',
-        md: 6,
-        xs: 12,
-        children: {
-          wrapper: { className: 'content5-block-content' },
-          img: {
-            children:
-              'partners/中国中车.jpg',
-          },
-          content: {
-            children: (
-              <span>
-                <p>&nbsp;中国中车</p>
-              </span>
-            ),
-          },
+        name: 'elem0',
+        className: 'teams0-banner-user-elem',
+        titleWrapper: {
+          className: 'teams0-content-wrapper',
+          children: [
+            {
+              name: 'image',
+              children:
+                <img src="partners/中国中车.jpg"></img>,
+              className: 'teams0-image',
+            },
+            {
+              name: 'content',
+              children:
+                '中国中车股份有限公司，是经国务院同意，国务院国资委批准，由中国南车股份有限公司、中国北车股份有限公司按照对等原则合并组建的A+H股上市公司',
+              className: 'teams0-content',
+            },
+            { name: 'title', children: '中国中车', className: 'teams0-h1' },
+            {
+              name: 'content2',
+              children: '中国轨道交通领域龙头企业',
+              className: 'teams0-content',
+            },
+          ],
         },
       },
       {
-        name: 'block2',
-        className: 'block',
-        md: 6,
-        xs: 12,
-        children: {
-          wrapper: { className: 'content5-block-content' },
-          img: {
-            children:
-              'partners/Binance.jpg',
-          },
-          content: {
-            children: (
-              <span>
-                <p>&nbsp;币安</p>
-              </span>
-            ),
-          },
+        name: 'elem1',
+        className: 'teams0-banner-user-elem',
+        titleWrapper: {
+          className: 'teams0-content-wrapper',
+
+          children: [
+            {
+              name: 'image',
+              children:
+                <img src="partners/Binance.jpg"></img>,
+              className: 'teams0-image',
+            },
+            {
+              name: 'content',
+              children:
+                'Binance，中文名称：币安，是Binance Holdings Limited公司旗下是一个全方位的区块链生态品牌，创立于2017年，旨在成为区块链世界的基础构建者，推动区块链行业发展，实现价值的自由流通，向全球提供广泛的数字货币交易、币种信息、区块链教育、区块链项目孵化、区块链慈善基金等服务。',
+              className: 'teams0-content',
+            },
+            { name: 'title', children: 'Binance', className: 'teams0-h1' },
+            {
+              name: 'content2',
+              children: '全球区块链领域独角企业',
+              className: 'teams0-content',
+            },
+          ],
         },
       },
-
     ],
   },
 };
+
 export const Teams10DataSource = {
   wrapper: { className: 'home-page-wrapper teams1-wrapper' },
   page: { className: 'home-page teams1' },
@@ -317,9 +364,9 @@ export const Teams10DataSource = {
               name: 'image',
               className: 'teams1-image',
               children:
-              <HeadImageWrap>
-                <img src="partners/王彧弋博士.jpg" />
-              </HeadImageWrap>,
+                <HeadImageWrap>
+                  <img src="partners/王彧弋博士.jpg" />
+                </HeadImageWrap>,
             },
             { name: 'title', className: 'teams1-title', children: '王彧弋' },
             {
@@ -347,9 +394,9 @@ export const Teams10DataSource = {
               name: 'image',
               className: 'teams1-image',
               children:
-              <HeadImageWrap>
-              <img src="partners/马鋆溥博士.jpg" />
-            </HeadImageWrap>,
+                <HeadImageWrap>
+                  <img src="partners/马鋆溥博士.jpg" />
+                </HeadImageWrap>,
             },
             { name: 'title', className: 'teams1-title', children: '马鋆溥' },
             {
@@ -376,16 +423,15 @@ export const Teams10DataSource = {
               name: 'image',
               className: 'teams1-image',
               children:
-              <HeadImageWrap>
-              <img src="partners/陈阳昕.jpg" />
-            </HeadImageWrap>,
+                <HeadImageWrap>
+                  <img src="partners/陈阳昕.jpg" />
+                </HeadImageWrap>,
             },
             { name: 'title', className: 'teams1-title', children: '陈阳昕' },
             {
               name: 'content',
               className: 'teams1-job',
               children: '首席产品设计师',
-
             },
             {
               name: 'content1',
@@ -399,114 +445,7 @@ export const Teams10DataSource = {
     ],
   },
 };
-export const Content30DataSource = {
-  wrapper: { className: '' },
-  page: { className: '' },
-  OverPack: { playScale: 0.3 },
-  titleWrapper: {
-    className: '',
-    children: [
-      {
-        name: '',
-        // children: (
-          // <span>
-          //   <p>&nbsp;团队介绍</p>
-          // </span>
-        // ),
-        className: '',
-      },
-      {
-        name: '',
-        className: '',
-        // children: (
-        //   <span>
-        //     <span>
-        //       <p>湖南锦丰信息科技有限公司主要创始人介绍</p>
-        //     </span>
-        //   </span>
-        // ),
-      },
-    ],
-  },
-  block: {
-    className: '',
-    children: [
 
-      {
-        name: '',
-        className: '',
-        md: 8,
-        xs: 24,
-        children: {
-          icon: { className: '', children: '' },
-          textWrapper: { className: '' },
-          title: {
-            className: '',
-            children: (
-              <span>
-                <span>
-                  <p>
-                    <br />
-                  </p>
-                </span>
-              </span>
-            ),
-          },
-          content: {
-            className: '',
-            children: (
-              <span>
-                <p>
-                  <br />
-                </p>
-              </span>
-            ),
-          },
-        },
-      },
-      {
-        name: '',
-        className: '',
-        md: 8,
-        xs: 24,
-        children: {
-          icon: {
-            className: '',
-            // children:
-            //   'https://zos.alipayobjects.com/rmsportal/UsUmoBRyLvkIQeO.png',
-          },
-          textWrapper: { className: '' },
-          title: { className: '', },
-          content: {
-            className: '',
-            // children:
-            //   '金融级联机交易处理中间件，大规模分布式计算机，数万笔/秒级并发能力，严格保证交易数据统一性。',
-          },
-        },
-      },
-      {
-        name: '',
-        className: '',
-        md: 8,
-        xs: 24,
-        children: {
-          icon: {
-            className: '',
-            // children:
-            //   'https://zos.alipayobjects.com/rmsportal/ipwaQLBLflRfUrg.png',
-          },
-          textWrapper: { className: '' },
-          title: { className: '', children: '' },
-          content: {
-            className: '',
-            // children:
-            //   '一站式、全周期大数据协同工作平台，PB级数据处理、毫秒级数据分析工具。',
-          },
-        },
-      },
-     ],
-  },
-};
 export const Footer10DataSource = {
   wrapper: { className: 'home-page-wrapper footer1-wrapper' },
   OverPack: { className: 'footer1', playScale: 0.2 },
@@ -522,56 +461,15 @@ export const Footer10DataSource = {
         title: {
           className: 'logo',
           children:
-            'https://zos.alipayobjects.com/rmsportal/qqaimmXZVSwAhpL.svg',
+            '',
         },
         childWrapper: {
-          className: 'slogan',
+          className: '',
           children: [
             {
               name: 'content0',
-              children: 'Animation specification and components of Ant Design.',
+              children: '',
             },
-          ],
-        },
-      },
-      {
-        name: 'block1',
-        xs: 24,
-        md: 6,
-        className: 'block',
-        title: { children: '产品' },
-        childWrapper: {
-          children: [
-            { name: 'link0', href: '#', children: '产品更新记录' },
-            { name: 'link1', href: '#', children: 'API文档' },
-            { name: 'link2', href: '#', children: '快速入门' },
-            { name: 'link3', href: '#', children: '参考指南' },
-          ],
-        },
-      },
-      {
-        name: 'block2',
-        xs: 24,
-        md: 6,
-        className: 'block',
-        title: { children: '关于' },
-        childWrapper: {
-          children: [
-            { href: '#', name: 'link0', children: 'FAQ' },
-            { href: '#', name: 'link1', children: '联系我们' },
-          ],
-        },
-      },
-      {
-        name: 'block3',
-        xs: 24,
-        md: 6,
-        className: 'block',
-        title: { children: '资源' },
-        childWrapper: {
-          children: [
-            { href: '#', name: 'link0', children: 'Ant Design' },
-            { href: '#', name: 'link1', children: 'Ant Motion' },
           ],
         },
       },
@@ -581,11 +479,33 @@ export const Footer10DataSource = {
   copyrightPage: { className: 'home-page' },
   copyright: {
     className: 'copyright',
-    children: (
-      <span>
-        ©2020 by <a href="https://motion.ant.design">锦丰科技</a> All Rights
+    children: [
+      (
+        <span>
+          ©2020 by <a href="https://xin.baidu.com/company_detail_31243928268318?rq=ef&pd=ee&from=ps" >锦丰科技</a> All Rights
         Reserved
-      </span>
-    ),
+        </span>
+      ),
+      (
+        <span>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+      ),
+      (
+        <span>
+          ©锦丰科技<a href="https://map.baidu.com/search/%E6%B9%96%E5%8D%97%E7%9C%81%E6%A0%AA%E6%B4%B2%E5%B8%82%E7%9F%B3%E5%B3%B0%E5%8C%BA%E7%94%B0%E5%BF%83%E9%AB%98%E7%A7%91%E5%9B%AD/@12593195.084661353,3216495.1950000003,14.91z?querytype=s&wd=%E6%B9%96%E5%8D%97%E7%9C%81%E6%A0%AA%E6%B4%B2%E5%B8%82%E7%9F%B3%E5%B3%B0%E5%8C%BA%E7%94%B0%E5%BF%83%E9%AB%98%E7%A7%91%E5%9B%AD&c=131&pn=0&device_ratio=2&da_src=shareurl" >公司地址：</a> 湖南省株洲市石峰区田心高科园
+        </span>
+      ),
+      (
+        <span>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+      ),
+      (
+        <span>
+          ©锦丰信息科技有限公司联系方式： 0731-22161180
+        </span>
+      )
+    ],
   },
 };
