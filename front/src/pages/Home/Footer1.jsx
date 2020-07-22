@@ -18,11 +18,11 @@ class Footer extends React.Component {
         <Col key={i.toString()} {...itemProps} title={null} content={null}>
           <h2 {...title}>
             {typeof title.children === 'string' &&
-            title.children.match(isImg) ? (
-              <img src={title.children} width="100%" alt="img" />
-            ) : (
-              title.children
-            )}
+              title.children.match(isImg) ? (
+                <img src={title.children} width="100%" alt="img" />
+              ) : (
+                title.children
+              )}
           </h2>
           <div {...childWrapper}>
             {childWrapper.children.map(getChildrenToRender)}
@@ -36,43 +36,18 @@ class Footer extends React.Component {
     const { dataSource } = props;
     delete props.dataSource;
     delete props.isMobile;
-    const childrenToRender = this.getLiChildren(dataSource.block.children);
+    //const childrenToRender = this.getLiChildren(dataSource.block.children);
     return (
-      
-      <div {...props} {...dataSource.wrapper}>
-        <OverPack {...dataSource.OverPack}>
-            <div {...dataSource.copyrightPage}>
-              <div {...dataSource.copyright}>
-                {dataSource.copyright.children}
-              </div>
-            </div>
-         </OverPack>
-       </div>
 
-      // <div {...props} {...dataSource.wrapper}>
-      //   <OverPack {...dataSource.OverPack}>
-      //     <QueueAnim
-      //       type="bottom"
-      //       key="ul"
-      //       leaveReverse
-      //       component={Row}
-      //       {...dataSource.block}
-      //     >
-      //       {childrenToRender}
-      //     </QueueAnim>
-      //     <TweenOne
-      //       animation={{ y: '+=30', opacity: 0, type: 'from' }}
-      //       key="copyright"
-      //       {...dataSource.copyrightWrapper}
-      //     >
-            // <div {...dataSource.copyrightPage}>
-            //   <div {...dataSource.copyright}>
-            //     {dataSource.copyright.children}
-            //   </div>
-            // </div>
-      //     </TweenOne>
-      //   </OverPack>
-      // </div>
+      <div {...props} {...dataSource.wrapper}>
+        <div {...dataSource.OverPack}>
+          <div {...dataSource.copyrightPage}>
+            <div {...dataSource.copyright}>
+              {dataSource.copyright.children.map(getChildrenToRender)}
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
