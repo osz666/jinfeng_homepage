@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { Input } from 'antd';
 const HeadImageWrap = styled.div`
   & img{
     width: 180px;
@@ -28,16 +29,17 @@ export const Nav00DataSource = {
           // href: '#Content0_0',
           children: [
             {
-              children: (
+              children: [
+                (
                 <Link 
-                to="Teams0_0"
+                to="Content0_0"
                 smooth={true} 
                 >
-              <span>
-                <a>产品与服务</a>
-              </span>
               </Link>
-              ),
+              ),( <span>
+                <p>产品与服务</p>
+              </span>)
+              ],
               name: 'text',
             },
           ],
@@ -50,16 +52,19 @@ export const Nav00DataSource = {
           // href: '#Teams0_0',
           children: [
             {
-              children: (
+              children: [
+                (
                 <Link 
                   to="Teams0_0"
                   smooth={true}
                   >
-                <span>
-                  <a>客户介绍</a>
-                </span>
                 </Link>
-              ),
+                ),
+                (
+                 <span>
+                  <p>客户介绍</p>
+                 </span>)
+                 ],
               name: 'text',
             },
           ],
@@ -72,16 +77,17 @@ export const Nav00DataSource = {
         //  href: '#Teams1_0',
           children: [
             {
-              children: (
+              children:[(
                 <Link 
-                  to="Teams0_0"
+                  to="Teams1_0"
                   smooth={true}
                   >
-                <span>
-                  <a>团队介绍</a>
-                </span>
                 </Link>
+               
               ),
+            ( <span>
+              <p>团队介绍</p>
+              </span>)] ,
               name: 'text',
             },
           ],
@@ -94,17 +100,23 @@ export const Nav00DataSource = {
        // href: '#',
         children: [
           {
-            children: (
-              <Link 
-                  to="Teams0_0"
-                  smooth={true}
-                  >
-                <span>
-                  <a>联系我们</a>
-                </span>
-                </Link>
-          ),
-           name: 'text',
+            children: [
+            (<Link 
+              to="Teams0_0"
+              smooth={true}
+              activeStyle={{color: '#44bbd0', borderBottom: "10px solid #cfd0d0" }}
+              >
+            </Link>     
+           ),
+            (
+             <span>
+                <p>联系我们</p>
+              </span>
+            ),
+          
+          ],
+          name: 'text'    
+           
          },
         ],
       },
@@ -265,7 +277,6 @@ export const Teams00DataSource = {
       {
         name: 'content',
         className: 'title-content',
-       
       },
     ],
   },
@@ -337,7 +348,7 @@ export const Teams10DataSource = {
   OverPack: { playScale: 0.3, className: '' },
   titleWrapper: {
     className: 'title-wrapper',
-    children: [{ name: 'title', children: '团队成员' }],
+    children: [{ name: 'title', children: '团队介绍' }],
   },
   children: [
     {
@@ -443,6 +454,32 @@ export const Teams10DataSource = {
         },
       },
     ],
+  },
+};
+export const Content30DataSource = {
+  wrapper: { className: 'home-page-wrapper content3-wrapper' },
+  page: { className: 'home-page content3' },
+  OverPack: { playScale: 0.3, className: 'content3' },
+  titleWrapper: {
+    className: 'title-wrapper',
+    children: [{ name: 'title', children: '联系我们' }],
+  },
+  childWrapper: {
+    className: 'content3-block-wrapper',
+    children: [
+      {
+        name:"block",
+        className:"content3-block",
+        children:{
+          className:"content3-block-textbox",
+          children:
+            <input>姓名</input>,
+          children:
+            <input>联系方式</input>,
+        }
+      }
+      
+    ]
   },
 };
 
